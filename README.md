@@ -23,3 +23,6 @@
 - 在被測試的函式上方加上註解，這將會出現在文件中
 - 可以添加 ExampleTest([示例](https://go.dev/blog/examples ))更了解測試，只是通常與實際程式碼相比是過時的，就像常忘記更新 Readme 一樣
 - 通過指令 godoc -http=:6060 並訪問 http://localhost:6060/pkg/ ，可以在文件中找到對應的 pkg 以及說明
+
+## #3 iteration
+- 透過編寫 benchmarks([基準測試](https://pkg.go.dev/testing#hdr-Benchmarks ))，程式碼會將函式運行 b.N 次，並測量需要多長的時間處理，指令為 `go test -bench=.`
