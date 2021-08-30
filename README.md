@@ -21,8 +21,14 @@
 
 ## #2 integers
 - 在被測試的函式上方加上註解，這將會出現在文件中
-- 可以添加 ExampleTest([示例](https://go.dev/blog/examples ))更了解測試，只是通常與實際程式碼相比是過時的，就像常忘記更新 Readme 一樣
+- 可以添加 ExampleTest([示例](https://go.dev/blog/examples ))更了解測試，並透過`go test -v`執行，只是通常與實際程式碼相比是過時的，就像常忘記更新 Readme 一樣
 - 通過指令 godoc -http=:6060 並訪問 http://localhost:6060/pkg/ ，可以在文件中找到對應的 pkg 以及說明
 
 ## #3 iteration
 - 透過編寫 benchmarks([基準測試](https://pkg.go.dev/testing#hdr-Benchmarks ))，程式碼會將函式運行 b.N 次，並測量需要多長的時間處理，指令為 `go test -bench=.`
+
+## #4 array
+- array 的大小也會是類型的一部分，`[4]int` 作為 `[5]int` 類型作為參數傳入函式是不可編譯的
+- 測試並不是越多越好，太多的測試會增加維護成本
+- 可以透過 `go test -cover` 指令計算測試的覆蓋率([golang 測試覆蓋率文章](https://go.dev/blog/cover))
+- 使用 [可變參數](https://gobyexample.com/variadic-functions) 接受或傳遞一個 array 或 slice
