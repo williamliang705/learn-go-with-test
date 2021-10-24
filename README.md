@@ -57,3 +57,17 @@
   ```
 - 當資料龐大或只想要有一個實例時，也可以使用指針傳遞
 - 指針可以為 nil，當函數返回指針時，要檢查是否為 nil，否則會拋出執行異常
+
+## #7 map
+- map 有個特別的特性，就是不用指針傳遞就可以修改它們
+- map 是引用類型，所以擁有對底層數據結構的引用，所以無論 map 有多大，都只會有一個
+- 如果嘗試建立一個 nil 的 map 會導致異常
+  ``` golang
+    // O
+    dictionary = map[string]string{}
+    dictionary = make(map[string]string)
+  
+    // X
+    var m map[string]string
+  ```
+  
