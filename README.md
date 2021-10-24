@@ -32,3 +32,8 @@
 - 測試並不是越多越好，太多的測試會增加維護成本
 - 可以透過 `go test -cover` 指令計算測試的覆蓋率([golang 測試覆蓋率文章](https://go.dev/blog/cover))
 - 使用 [可變參數](https://gobyexample.com/variadic-functions) 接受或傳遞一個 array 或 slice
+
+## #5 struct
+- 將 circle 和 rectangle 賦予 Area() method，以此解決無法使用多型的問題
+- 定義一個 Shape interface 並提供 Area() 函式，我們可以只關注形狀面積的產生，而不是是長方形或是圓形，達成解耦的作用
+- 可以為一系列相同測試方式使用 [表格驅動測試](https://github.com/golang/go/wiki/TableDrivenTests) ，如果要測試新的接口實現，或著對同個結構的數據有不同的情境測試，可以考慮使用
