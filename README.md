@@ -46,12 +46,12 @@
     }
     
     // O
-    func (w *Wallet) Balance() int {
-      return w.balance
+    func (w *Wallet) Deposit(amount int) {
+      w.balance += amount
     }
 
     // X
-    func (w Wallet) Balance() int {
-      return w.balance
+    func (w Wallet) Deposit(amount int) {
+      w.balance += amount
     }
   ```
