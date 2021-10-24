@@ -37,3 +37,21 @@
 - 將 circle 和 rectangle 賦予 Area() method，以此解決無法使用多型的問題
 - 定義一個 Shape interface 並提供 Area() 函式，我們可以只關注形狀面積的產生，而不是長方形或是圓形，達成解耦的作用
 - 可以為一系列相同測試方式使用 [表格驅動測試](https://github.com/golang/go/wiki/TableDrivenTests) ，如果要測試新的接口實現，或著對同個結構的數據有不同的情境測試，可以考慮使用
+
+## #6 pointer
+- 當提供函式給外部改變內部私有變數時，要使用指針的方式撰寫，才能因內存地址相同修改到同一個物件
+  ``` golang
+    type Wallet struct {
+      balance int
+    }
+    
+    // O
+    func (w *Wallet) Balance() int {
+      return w.balance
+    }
+
+    // X
+    func (w Wallet) Balance() int {
+      return w.balance
+    }
+  ```
